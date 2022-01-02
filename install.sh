@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) 2022 Keir Finlow-Bates <keir@chainfrog.com>
 
 # Make sure we have a tmp folder
 if [[ ! -d ./tmp ]]

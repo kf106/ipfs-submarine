@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Copyright (c) 2022 Keir Finlow-Bates <keir@chainfrog.com>
 
 # First check that ipfs is installed and that the folder to submarine exists
 if which ipfs >/dev/null; then
