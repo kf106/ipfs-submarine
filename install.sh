@@ -33,10 +33,11 @@ mkdir ipfs-public
 
 # Set up private IPFS
 IPFS_PATH=$HERE/ipfs-private ipfs init
-echo -e “/key/swarm/psk/1.0.0/\n/base16/\n`tr -dc ‘a-f0-9’ < /dev/urandom | head -c64`” > ~/ipfs-private/swarm.key
-IPFS_PATH=~/ipfs-private ipfs bootstrap rm --all
-PEERID=`IPFS_PATH=~/ipfs-private ipfs config show | grep "PeerID" | sed 's/.*: //' | sed 's/\"//g'`
-IPFS_PATH=~/ipfs-private ipfs bootstrap add "/ip4/127.0.0.1/tcp/4001/ipfs/$PEERID"
+sleep 2 # pause for init
+echo -e “/key/swarm/psk/1.0.0/\n/base16/\n`tr -dc ‘a-f0-9’ < /dev/urandom | head -c64`” > $HERE/ipfs-private/swarm.key
+IPFS_PATH=$HERE/ipfs-private ipfs bootstrap rm --all
+PEERID=`IPFS_PATH=$HERE/ipfs-private ipfs config show | grep "PeerID" | sed 's/.*: //' | sed 's/\"//g'`
+IPFS_PATH=$HERE/ipfs-private ipfs bootstrap add "/ip4/127.0.0.1/tcp/4001/ipfs/$PEERID"
 # change ports for private, just in case we run the daemon
 sed -i 's|tcp/4001|tcp/4002|g' ./ipfs-private/config
 sed -i 's|udp/4001|udp/4002|g' ./ipfs-private/config
@@ -45,6 +46,7 @@ sed -i 's|tcp/8080|tcp/8081|g' ./ipfs-private/config
 
 # And set up public IPFS
 IPFS_PATH=$HERE/ipfs-public ipfs init
+sleep 2 # pause for init
 
 # Finally, start the public IPFS daemon
 IPFS_PATH=$HERE/ipfs-public ipfs daemon &

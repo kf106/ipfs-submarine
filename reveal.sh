@@ -27,7 +27,7 @@ then
     exit 1
 fi
 
-if [[ ! -d $1 ]]
+if [[ ! -f $1 ]]
 then
     echo "File does not exist"
     exit 1
