@@ -27,3 +27,11 @@ To submarine a particular folder, run:
 
 To reveal a particular file from the folder, run:
 `./reveal.sh <folder>/<file>`
+
+# Example
+
+The installation script provides the option to generate five random files in a folder called `file`, which you can use to test your setup.
+
+Run `./submarine.sh file` to publish the folder but not the files. Then visit the link that is displayed to see the folder and the list of files. Click on `0.json` and the browser will hang, because the file is not published.
+
+Then run `./reveal.sh file/0.json` and shortly afterwards the browser will display the contents of the file (a short random string of digits).

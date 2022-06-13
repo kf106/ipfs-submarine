@@ -51,5 +51,7 @@ cat tmp/$FOLDERCID.bin | IPFS_PATH=$HERE/ipfs-public ipfs dag put --store-codec 
 IPFS_PATH=$HERE/ipfs-public ipfs pin add --recursive=false $FOLDERCID
 
 echo "Your folder is now publicly pinned, but you can't see it or the files until you add them individually."
-echo "http://127.0.0.1:8080/ipfs/$FOLDERCID/<file>"
+echo
+echo "Open the following link to see the folder, but note that the server will hang if you try to view one of the files:"
+echo "http://127.0.0.1:5001/ipfs/bafybeihcyruaeza7uyjd6ugicbcrqumejf6uf353e5etdkhotqffwtguva/#/ipfs/$FOLDERCID"
 
