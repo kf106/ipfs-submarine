@@ -55,13 +55,13 @@ sleep 3
 echo
 echo "Public IPFS server running. To stop it enter 'pkill ipfs'"
 
-read -p "Create a ./test folder with random files? (y/n) " -n 1
+read -p "Create a ./files folder with random files? (y/n) " -n 1
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]; then
     mkdir test
-    echo $RANDOM | md5sum | head -c 20 > ./test/0.json
-    echo $RANDOM | md5sum | head -c 20 > ./test/1.json
-    echo $RANDOM | md5sum | head -c 20 > ./test/2.json
-    echo $RANDOM | md5sum | head -c 20 > ./test/3.json
-    echo $RANDOM | md5sum | head -c 20 > ./test/4.json        
+    echo $RANDOM | md5sum | head -c 20 > ./file/0.json
+    echo $RANDOM | md5sum | head -c 20 > ./file/1.json
+    echo $RANDOM | md5sum | head -c 20 > ./file/2.json
+    echo $RANDOM | md5sum | head -c 20 > ./file/3.json
+    echo $RANDOM | md5sum | head -c 20 > ./file/4.json        
 fi
