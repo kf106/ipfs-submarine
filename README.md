@@ -35,3 +35,7 @@ The installation script provides the option to generate five random files in a f
 Run `./submarine.sh file` to publish the folder but not the files. Then visit the link that is displayed to see the folder and the list of files. Click on `0.json` and the browser will hang, because the file is not published.
 
 Then run `./reveal.sh file/0.json` and shortly afterwards the browser will display the contents of the file (a short random string of digits).
+
+# Known limitations
+
+The system only supports folders containing up to 5697 files. See [issue 2](https://github.com/kf106/ipfs-submarine/issues/2) for details.
